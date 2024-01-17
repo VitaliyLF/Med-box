@@ -1,0 +1,26 @@
+.hero {
+  background-color: var(--color-light-mint);
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--offset-20);
+  }
+
+  &__info {
+    max-width: 475px;
+    padding-top: var(--offset-45);
+  }
+
+  &__subtitle {
+    @include fz70-agrandir;
+
+    &:not(:last-child) {
+      margin-bottom: var(--offset-20);
+    }
+  }
+
+  &__text {
+    max-width: 436px;
+  }
+}

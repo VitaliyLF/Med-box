@@ -7,8 +7,11 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#111111">
-  <title>New site</title>
-  <link rel="preload" href="fonts/GilroyRegular.woff2" as="font" type="font/woff2" crossorigin>
+  <title>Homepage</title>
+  <link rel="preload" href="fonts/AgrandirRegular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/AtkinsonHyperlegibleRegular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/AtkinsonHyperlegibleBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/DMSansRegular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/vendor.css">
   <link rel="stylesheet" href="css/main.css">
   <script defer src="js/main.js"></script>
@@ -19,9 +22,7 @@
   <div class="site-container">
     @include('../partials/header.html')
     <main class="main" id="main">
-      <h1>Lorem ipsum dolor sit amet <abbr title="consectetur">consectetur</abbr> adipisicing elit. Cum dicta
-        reprehenderit ullam omnis quisquam aliquid
-        aut incidunt sit vero! Consequatur, assumenda libero velit qui facilis quae officia voluptate nihil. Optio.</h1>
+      @include('../partials/hero.html')
     </main>
     @include('../partials/footer.html')
   </div>

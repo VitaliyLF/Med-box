@@ -1,0 +1,59 @@
+.header {
+  padding-top: var(--offset-25);
+  padding-bottom: var(--offset-30);
+  background-color: var(--color-light-mint);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: var(--offset-50);
+    border-radius: var(--border-radius-all10);
+    border: var(--border-mint);
+    padding: var(--offset-20) var(--offset-40);
+    background-color: var(--color-light);
+  }
+
+  &__nav-list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav-item {
+    @include mr(25px);
+  }
+
+  &__nav-link {
+    @include fz18-atkinson;
+
+    color: var(--black-green);
+  }
+
+  &__mobile {
+    display: none;
+  }
+
+  &__mobile-link {
+    position: relative;
+    padding: var(--offset-12) var(--offset-15) var(--offset-12) var(--offset-44);
+    background-color: var(--color-light);
+    border: var(--border-mexbox);
+    color: var(--color-medbox-green);
+
+    &::after {
+      content: "";
+      display: block;
+      width: 19px;
+      aspect-ratio: 1;
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      translate: 0 -50%;
+      background: url(../img/icon-header-phone.svg) center/cover no-repeat;
+    }
+  }
+
+  &__burger-wrapper {
+    display: none;
+  }
+}

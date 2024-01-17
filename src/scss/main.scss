@@ -1,10 +1,14 @@
-@import "vars";
+@import "base-vars";
+@import "colors-vars";
+@import "offset-system-vars";
 @import "mixins";
 @import "fonts";
 @import "settings";
 @import "reset";
 
+// page components connection
+@import "./components/btn";
+
 // page blocks connection
 @import "./components/header";
-
-// page components connection
+@import "./components/hero";

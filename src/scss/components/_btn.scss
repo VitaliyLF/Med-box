@@ -1,0 +1,16 @@
+.btn {
+  @include fz22-dmsans;
+
+  display: inline-flex;
+  align-items: center;
+  padding: var(--offset-15) var(--offset-20);
+  color: var(--color-light);
+  border-radius: var(--border-radius-all40);
+  background-color: var(--color-medbox-green);
+
+  &--big {
+    @include fz30-dmsans;
+
+    padding-inline: var(--offset-25);
+  }
+}
