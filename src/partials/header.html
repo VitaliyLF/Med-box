@@ -1,42 +1,45 @@
-<header class="header">
+<header class="header header--homepage">
   <div class="header__container container">
-    <a class="header__logo" href="#">
-      <img class="header__logo-img" src="img/main-logo.svg" alt="Medbox logo" loading="lazy" width="144" height="41">
-    </a>
-    <nav class="header__nav" aria-label="Main navigation">
-      <ul class="header__nav-list">
-        <li class="header__nav-item">
-          <a href="#" class="header__nav-link">What is Medbox</a>
-        </li>
-        <li class="header__nav-item">
-          <a href="#" class="header__nav-link">How it works</a>
-        </li>
-        <li class="header__nav-item">
-          <a href="#" class="header__nav-link">Providers</a>
-        </li>
-        <li class="header__nav-item">
-          <a href="#" class="header__nav-link">Reviews</a>
-        </li>
-        <li class="header__nav-item">
-          <a href="#" class="header__nav-link">FAQs</a>
-        </li>
-        <li class="header__nav-item">
-          <a href="#" class="header__nav-link">Resources</a>
-        </li>
-        <li class="header__nav-item">
-          <a href="#" class="header__nav-link">Contact Us</a>
-        </li>
-      </ul>
-      <div class="header__mobile">
-        <button class="header__mobile-btn btn" type="button" aria-hidden="true">Check My Coverage</button>
-        <a class="header__mobile-link btn" href="tel: 8663537856" aria-hidden="true">Call Us</a>
+    <div class="header__wrapper">
+      <a class="header__logo" href="#">
+        <img class="header__logo-img" src="img/main-logo.svg" alt="Medbox logo" loading="lazy" width="144" height="41">
+      </a>
+      <nav class="header__nav" aria-label="Main navigation" data-menu>
+        <ul class="header__nav-list">
+          <li class="header__nav-item" data-menu-item>
+            <a href="#" class="header__nav-link link ">What is Medbox</a>
+          </li>
+          <li class="header__nav-item" data-menu-item>
+            <a href="#" class="header__nav-link link">How it works</a>
+          </li>
+          <li class="header__nav-item" data-menu-item>
+            <a href="#" class="header__nav-link link">Providers</a>
+          </li>
+          <li class="header__nav-item" data-menu-item>
+            <a href="#" class="header__nav-link link">Reviews</a>
+          </li>
+          <li class="header__nav-item" data-menu-item>
+            <a href="#" class="header__nav-link link">FAQs</a>
+          </li>
+          <li class="header__nav-item" data-menu-item>
+            <a href="#" class="header__nav-link link">Resources</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link link">Contact Us</a>
+          </li>
+        </ul>
+        <div class="header__mobile">
+          <button class="header__mobile-btn btn" type="button" aria-hidden="true">Check My Coverage</button>
+          <a class="header__mobile-link btn btn--phone" href="tel: 8663537856" aria-hidden="true">Call Us</a>
+        </div>
+      </nav>
+      <button class="header__btn btn" type="button">Check My Coverage</button>
+      <div class="header__burger-wrapper">
+        <span class="header__burger-info" data-menu-text aria-hidden="true">Menu</span>
+        <button class="header__burger" type="button" aria-label="Open menu" aria-expanded="false" data-burger>
+          <span class="header__burger-line"></span>
+        </button>
       </div>
-    </nav>
-    <button class="header__btn btn" type="button">Check My Coverage</button>
-    <div class="header__burger-wrapper">
-      <button class="header__burger" type="button" aria-label="Open menu" aria-expanded="false" data-burger>
-        <span class="header__burger-line"></span>
-      </button>
     </div>
   </div>
 </header>

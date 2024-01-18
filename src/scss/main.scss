@@ -1,13 +1,15 @@
+@import "mixins";
 @import "base-vars";
 @import "colors-vars";
 @import "offset-system-vars";
-@import "mixins";
+@import "unitary-classes";
 @import "fonts";
 @import "settings";
 @import "reset";
 
 // page components connection
 @import "./components/btn";
+@import "./components/link";
 
 // page blocks connection
 @import "./components/header";

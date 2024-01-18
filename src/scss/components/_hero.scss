@@ -1,26 +1,32 @@
 .hero {
-  background-color: var(--color-light-mint);
+  &--homepage {
+    background-color: var(--color-light-mint);
+  }
 
   &__wrapper {
     display: flex;
     justify-content: space-between;
-    gap: var(--offset-20);
+    gap: 20px;
   }
 
   &__info {
     max-width: 475px;
-    padding-top: var(--offset-45);
+    padding-top: 45px;
+  }
+
+  &__title {
+    @include mb(var(--offset-35));
   }
 
   &__subtitle {
     @include fz70-agrandir;
 
-    &:not(:last-child) {
-      margin-bottom: var(--offset-20);
-    }
+    @include mb(var(--offset-20));
   }
 
   &__text {
+    @include mb(var(--offset-35));
+
     max-width: 436px;
   }
 }

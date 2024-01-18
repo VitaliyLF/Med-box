@@ -7,8 +7,56 @@
   color: var(--color-light);
   border-radius: var(--border-radius-all40);
   background-color: var(--color-medbox-green);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 
-  &--big {
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: -1px;
+    right: -1px;
+    bottom: 0;
+    background-color: var(--color-deep-green);
+    transform: scaleY(0);
+    transform-origin: 50% 100%;
+    transition: transform var(--transition-duration) ease-out;
+  }
+
+  @include hover {
+    &::before {
+      transform: scaleY(1);
+    }
+  }
+
+  &--phone {
+    position: relative;
+    padding: 12px 15px 12px 44px;
+    background-color: var(--color-light);
+    border: var(--border-mexbox-color);
+    color: var(--color-medbox-green);
+    white-space: nowrap;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 19px;
+      aspect-ratio: 1;
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      translate: 0 -50%;
+      background: url(../img/icon-header-phone.svg) center/cover no-repeat;
+    }
+
+    @include mobile {
+      @include fz18-dmsans;
+    }
+  }
+
+  &--hero-section {
     @include fz30-dmsans;
 
     padding-inline: var(--offset-25);
