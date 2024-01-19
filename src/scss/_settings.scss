@@ -38,15 +38,17 @@
 }
 
 .skiplink {
+  --skiplink-offset: 20px;
+
   position: absolute;
   top: -200px;
-  left: 15px;
+  left: var(--skiplink-offset);
   transition: top var(--transition-duration) ease;
-  color: var(--color-light);
+  color: var(--color-black-green);
 
   &:focus {
-    top: 15px;
-    outline: 2px solid var(--color-light);
+    top: var(--skiplink-offset);
+    outline: 2px solid currentColor;
     outline-offset: 4px;
   }
 }

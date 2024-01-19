@@ -10,6 +10,7 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
+  transition: scale var(--transition-duration) ease;
 
   &::before {
     content: "";
@@ -25,30 +26,38 @@
     transition: transform var(--transition-duration) ease-out;
   }
 
+  &:focus {
+    outline: 2px solid var(--color-medbox-green);
+    outline-offset: 4px;
+  }
+
   @include hover {
     &::before {
       transform: scaleY(1);
     }
   }
 
+  &:active {
+    scale: 0.9;
+  }
+
   &--phone {
     position: relative;
     padding: 12px 15px 12px 44px;
     background-color: var(--color-light);
-    border: var(--border-mexbox-color);
+    border: 1px solid var(--border-mexbox-color);
     color: var(--color-medbox-green);
     white-space: nowrap;
 
     &::after {
-      content: "";
+      content: url(/img/icon-header-phone.svg);
       display: block;
       width: 19px;
-      aspect-ratio: 1;
+      height: 19px;
       position: absolute;
       top: 50%;
       left: 15px;
       translate: 0 -50%;
-      background: url(../img/icon-header-phone.svg) center/cover no-repeat;
     }
 
     @include mobile {

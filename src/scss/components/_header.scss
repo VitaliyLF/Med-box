@@ -6,6 +6,10 @@
   &--homepage {
     background-color: var(--color-light-mint);
     padding-bottom: var(--offset-30);
+
+    @include big-desktop {
+      padding-bottom: 0;
+    }
   }
 
   @include big-desktop {
@@ -35,6 +39,13 @@
 
     @include mobile {
       padding: var(--offset-20);
+    }
+  }
+
+  &__logo {
+    &:focus {
+      outline: 2px solid var(--color-medbox-green);
+      outline-offset: 4px;
     }
   }
 
@@ -90,7 +101,7 @@
     @include fz18-atkinson;
 
     display: block;
-    color: var(--black-green);
+    color: var(--color-black-green);
 
     @include big-desktop {
       @include fz26-atkinson;

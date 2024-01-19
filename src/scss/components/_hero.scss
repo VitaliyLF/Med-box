@@ -6,27 +6,69 @@
   &__wrapper {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    column-gap: 56px;
+    padding-bottom: var(--offset-40);
+
+    @include big-desktop {
+      flex-direction: column;
+    }
+
+    @include tablet {
+      column-gap: 0;
+      row-gap: 70px;
+    }
+
+    @include mobile {
+      padding-bottom: 0;
+    }
   }
 
   &__info {
     max-width: 475px;
     padding-top: 45px;
+
+    @include big-desktop {
+      max-width: 100%;
+      padding-top: 40px;
+    }
   }
 
   &__title {
     @include mb(var(--offset-35));
+
+    text-transform: uppercase;
+
+    @include mobile {
+      @include mb(var(--offset-20));
+    }
   }
 
   &__subtitle {
-    @include fz70-agrandir;
-
     @include mb(var(--offset-20));
+
+    @include mobile {
+      @include mb(var(--offset-20));
+    }
   }
 
   &__text {
     @include mb(var(--offset-35));
 
     max-width: 436px;
+
+    @include big-desktop {
+      max-width: 100%;
+    }
+
+    @include mobile {
+      @include mb(var(--offset-30));
+    }
+  }
+
+  &__img {
+    @include big-desktop {
+      max-width: 100%;
+      width: 100%;
+    }
   }
 }

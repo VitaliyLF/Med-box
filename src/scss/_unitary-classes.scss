@@ -1,7 +1,27 @@
 .title-section {
   @include fz19-atkinson;
+
+  @include mobile {
+    @include fz16-atkinson;
+  }
+}
+
+.subtitle-section {
+  @include fz50-agrandir;
+
+  &--homepage {
+    @include fz70-agrandir;
+
+    @include mobile {
+      @include fz50-agrandir-mobile;
+    }
+  }
 }
 
 .text-section {
   @include fz22-atkinson;
+
+  @include mobile {
+    @include fz20-atkinson-mobile;
+  }
 }
