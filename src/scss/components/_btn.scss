@@ -3,16 +3,16 @@
 
   display: inline-flex;
   align-items: center;
-  padding: var(--offset-15) var(--offset-20);
+  padding: var(--offset-tiny) var(--offset-small);
   color: var(--color-light);
-  border-radius: var(--border-radius-all40);
+  border-radius: var(--border-radius-all-large);
   background-color: var(--color-medbox-green);
   position: relative;
   overflow: hidden;
   z-index: 1;
   transition: scale var(--transition-duration) ease;
 
-  &::before {
+  &::after {
     content: "";
     position: absolute;
     z-index: -1;
@@ -26,38 +26,32 @@
     transition: transform var(--transition-duration) ease-out;
   }
 
-  &:focus {
-    outline: 2px solid var(--color-medbox-green);
-    outline-offset: 4px;
-  }
+  @include focus;
 
   @include hover {
-    &::before {
+    &::after {
       transform: scaleY(1);
     }
   }
 
-  &:active {
-    scale: 0.9;
-  }
+  @include active;
 
   &--phone {
-    position: relative;
-    padding: 12px 15px 12px 44px;
+    --icon-phone-size: 20px;
+
+    padding: 12px 15px;
     background-color: var(--color-light);
     border: 1px solid var(--border-mexbox-color);
     color: var(--color-medbox-green);
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    column-gap: calc(var(--icon-phone-size) / 2);
 
-    &::after {
+    &::before {
       content: url(/img/icon-header-phone.svg);
-      display: block;
-      width: 19px;
-      height: 19px;
-      position: absolute;
-      top: 50%;
-      left: 15px;
-      translate: 0 -50%;
+      width: var(--icon-phone-size);
+      height: var(--icon-phone-size);
     }
 
     @include mobile {
@@ -68,6 +62,6 @@
   &--hero-section {
     @include fz30-dmsans;
 
-    padding-inline: var(--offset-25);
+    padding-inline: var(--offset-medium-small);
   }
 }

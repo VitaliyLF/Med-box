@@ -6,8 +6,8 @@
   &__wrapper {
     display: flex;
     justify-content: space-between;
-    column-gap: 56px;
-    padding-bottom: var(--offset-40);
+    column-gap: 55px;
+    padding-bottom: var(--offset-large);
 
     @include big-desktop {
       flex-direction: column;
@@ -34,25 +34,25 @@
   }
 
   &__title {
-    @include mb(var(--offset-35));
+    @include mb(var(--offset-medium-large));
 
     text-transform: uppercase;
 
     @include mobile {
-      @include mb(var(--offset-20));
+      @include mb(var(--offset-small));
     }
   }
 
   &__subtitle {
-    @include mb(var(--offset-20));
+    @include mb(var(--offset-small));
 
     @include mobile {
-      @include mb(var(--offset-20));
+      @include mb(var(--offset-small));
     }
   }
 
   &__text {
-    @include mb(var(--offset-35));
+    @include mb(var(--offset-medium-large));
 
     max-width: 436px;
 
@@ -61,7 +61,7 @@
     }
 
     @include mobile {
-      @include mb(var(--offset-30));
+      @include mb(var(--offset-medium));
     }
   }
 

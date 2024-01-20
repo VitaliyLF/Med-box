@@ -1,11 +1,11 @@
 .header {
   --header-height: 85px;
 
-  padding-top: var(--offset-25);
+  padding-top: var(--offset-medium-small);
 
   &--homepage {
     background-color: var(--color-light-mint);
-    padding-bottom: var(--offset-30);
+    padding-bottom: var(--offset-medium);
 
     @include big-desktop {
       padding-bottom: 0;
@@ -27,9 +27,9 @@
     align-items: center;
     justify-content: space-between;
     column-gap: 20px;
-    border-radius: var(--border-radius-all10);
-    border: var(--border-mint-color);
-    padding: var(--offset-20) var(--offset-40);
+    border-radius: var(--border-radius-all-tiny);
+    border: 1px solid var(--border-mint-color);
+    padding: var(--offset-small) calc((var(--offset-small) * 2));
     background-color: var(--color-light);
 
     @include big-desktop {
@@ -38,15 +38,12 @@
     }
 
     @include mobile {
-      padding: var(--offset-20);
+      padding: var(--offset-small);
     }
   }
 
   &__logo {
-    &:focus {
-      outline: 2px solid var(--color-medbox-green);
-      outline-offset: 4px;
-    }
+    @include focus;
   }
 
   &__nav {
@@ -74,8 +71,8 @@
   &__nav-list {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 10px;
     align-items: center;
+    row-gap: 10px;
 
     @include big-desktop {
       margin-block: 45px;
@@ -86,12 +83,12 @@
   }
 
   &__nav-item {
-    @include mr(var(--offset-25));
+    @include mr(var(--offset-medium-small));
 
     @include big-desktop {
       @include mr(0);
 
-      @include mb(var(--offset-30));
+      @include mb(var(--offset-medium));
 
       flex-grow: 1;
     }
@@ -183,7 +180,7 @@
       width: 20px;
       height: var(--burger-line-height);
       background-color: currentColor;
-      border-radius: var(--border-radius-all20);
+      border-radius: var(--border-radius-all-small);
       transition: transform var(--transition-duration) ease-in-out, top var(--transition-duration) ease-in-out;
     }
 

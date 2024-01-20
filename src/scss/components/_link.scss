@@ -1,6 +1,6 @@
 .link {
   position: relative;
-  transition: color var(--transition-duration) ease-in-out, scale var(--transition-duration) ease;
+  transition: color var(--transition-duration) ease, scale var(--transition-duration) ease;
 
   &::before {
     content: "";
@@ -15,11 +15,7 @@
     transition: transform var(--transition-duration) ease-in-out;
   }
 
-  &:focus {
-    outline: 2px solid var(--color-medbox-green);
-    outline-offset: 4px;
-    scale: 1.1;
-  }
+  @include focus;
 
   @include hover {
     color: var(--color-medbox-green);
@@ -30,7 +26,5 @@
     }
   }
 
-  &:active {
-    color: var(--color-puerto-rico);
-  }
+  @include active;
 }

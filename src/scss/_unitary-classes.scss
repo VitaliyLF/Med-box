@@ -1,6 +1,8 @@
 .title-section {
   @include fz19-atkinson;
 
+  font-weight: 400;
+
   @include mobile {
     @include fz16-atkinson;
   }
