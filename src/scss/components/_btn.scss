@@ -10,29 +10,50 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
-  transition: scale var(--timing) ease;
+  // transition: scale var(--timing) ease;
 
   &::after {
     content: "";
     position: absolute;
-    z-index: -1;
-    top: 0;
-    left: -1px;
-    right: -1px;
+    left: 0;
+    right: 0;
     bottom: 0;
-    background-color: var(--color-deep-green);
-    transform: scaleY(0);
-    transform-origin: 50% 100%;
-    transition: transform var(--timing) ease-out;
+    top: 0;
+    border-radius: 8px;
+    z-index: -1;
+    transition: background-color 0.3s ease;
   }
 
   @include focus;
 
   @include hover {
     &::after {
-      transform: scaleY(1);
+      @include loadingWave;
+
+      background-color: var(--color-deep-green);
+      animation: loadingWave 1.2s linear;
     }
   }
+
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   z-index: -1;
+  //   top: 0;
+  //   left: -1px;
+  //   right: -1px;
+  //   bottom: 0;
+  //   background-color: var(--color-deep-green);
+  //   transform: scaleY(0);
+  //   transform-origin: 50% 100%;
+  //   transition: transform var(--timing) ease;
+  // }
+
+  // @include hover {
+  //   &::after {
+  //     transform: scaleY(1);
+  //   }
+  // }
 
   @include active;
 

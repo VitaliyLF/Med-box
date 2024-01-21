@@ -141,13 +141,72 @@
     }
   }
 
-  &__burger-wrapper {
+  &__burger {
+    --burger-width: 43px;
+    --burger-height: 43px;
+    --burger-line-height: 3px;
+
     display: none;
+
+    &-line {
+      position: relative;
+      width: var(--burger-width);
+      height: var(--burger-height);
+      color: var(--color-light);
+      background-color: var(--color-medbox-green);
+      border-radius: 50%;
+      z-index: 10;
+      cursor: pointer;
+      transition: background-color var(--timing) ease-out, color var(--timing) ease-out;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: var(--burger-line-height);
+        background-color: currentColor;
+        border-radius: var(--border-radius-all-small);
+        transition: transform var(--timing) ease-in-out, top var(--timing) ease-in-out;
+      }
+
+      &::before {
+        top: calc(50% - var(--burger-line-height) - 5px);
+      }
+
+      &::after {
+        top: calc(50% + 5px);
+      }
+    }
+
+    &--active {
+      & .header__burger-line {
+        background-color: transparent;
+        color: var(--color-medbox-green);
+        --burger-line-height: 2px;
+
+        &::before {
+          width: 30px;
+          top: 48%;
+          transform: translateX(-50%) rotate(45deg);
+          transition: transform var(--timing) ease-in-out, top var(--timing) ease-in-out;
+        }
+
+        &::after {
+          width: 30px;
+          top: 48%;
+          transform: translateX(-50%) rotate(-45deg);
+          transition: transform var(--timing) ease-in-out, top var(--timing) ease-in-out;
+        }
+      }
+    }
 
     @include big-desktop {
       display: flex;
       align-items: center;
-      column-gap: 13px;
+      gap: 15px;
     }
   }
 
@@ -160,67 +219,6 @@
     &.is-hidden {
       opacity: 0;
       visibility: hidden;
-    }
-  }
-
-  &__burger {
-    --burger-width: 43px;
-    --burger-height: 43px;
-    --burger-line-height: 3px;
-
-    position: relative;
-    width: var(--burger-width);
-    height: var(--burger-height);
-    color: var(--color-light);
-    background-color: var(--color-medbox-green);
-    border-radius: 50%;
-    z-index: 10;
-    cursor: pointer;
-    transition: background-color var(--timing) ease, color var(--timing) ease;
-
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 20px;
-      height: var(--burger-line-height);
-      background-color: currentColor;
-      border-radius: var(--border-radius-all-small);
-      transition: transform var(--timing) ease-in-out, top var(--timing) ease-in-out;
-    }
-
-    &::before {
-      top: calc(50% - var(--burger-line-height) - 5px);
-    }
-
-    &::after {
-      top: calc(50% + 5px);
-    }
-
-    &-line {
-      display: none;
-    }
-
-    &--active {
-      background-color: transparent;
-      color: var(--color-medbox-green);
-      --burger-line-height: 2px;
-
-      &::before {
-        width: 30px;
-        top: 48%;
-        transform: translateX(-50%) rotate(45deg);
-        transition: transform var(--timing) ease-in-out, top var(--timing) ease-in-out;
-      }
-
-      &::after {
-        width: 30px;
-        top: 48%;
-        transform: translateX(-50%) rotate(-45deg);
-        transition: transform var(--timing) ease-in-out, top var(--timing) ease-in-out;
-      }
     }
   }
 }
