@@ -1,0 +1,65 @@
+.preloader {
+  --preloader-offset: 100px;
+  --preloader-border-width: 10px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-blue-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  &--hide {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+  }
+
+  &__loader,
+  &__percents {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+  }
+
+  &__main {
+    display: inline-block;
+    width: calc(var(--preloader-offset) * 2);
+    aspect-ratio: 1;
+    overflow: hidden;
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+  }
+
+  &__content {
+    @include preloader;
+
+    position: absolute;
+    top: var(--preloader-offset);
+    left: var(--preloader-offset);
+    width: var(--preloader-offset);
+    aspect-ratio: 1;
+    border: var(--preloader-border-width) solid var(--color-deep-green);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: preloader 1.2s linear infinite;
+  }
+
+  &__percents {
+    @include fz22-dmsans;
+
+    color: var(--color-black-green);
+  }
+}
