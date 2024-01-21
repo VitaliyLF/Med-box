@@ -98,3 +98,9 @@
   font-size: 18px;
   line-height: 1.05;
 }
+
+@mixin fz16-dmsans {
+  font-family: var(--font-family-additional);
+  font-size: 16px;
+  line-height: 1.05;
+}

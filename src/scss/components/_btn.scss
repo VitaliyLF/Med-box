@@ -10,7 +10,7 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
-  transition: scale var(--transition-duration) ease;
+  transition: scale var(--timing) ease;
 
   &::after {
     content: "";
@@ -23,7 +23,7 @@
     background-color: var(--color-deep-green);
     transform: scaleY(0);
     transform-origin: 50% 100%;
-    transition: transform var(--transition-duration) ease-out;
+    transition: transform var(--timing) ease-out;
   }
 
   @include focus;
@@ -49,13 +49,17 @@
     column-gap: calc(var(--icon-phone-size) / 2);
 
     &::before {
-      content: url(/img/icon-header-phone.svg);
+      content: url(../img/icon-header-phone.svg);
       width: var(--icon-phone-size);
       height: var(--icon-phone-size);
     }
 
     @include mobile {
       @include fz18-dmsans;
+    }
+
+    @include small-mobile {
+      @include fz16-dmsans;
     }
   }
 

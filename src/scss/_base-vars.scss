@@ -19,8 +19,11 @@
   --border-radius-top-left: 100px 0px 0px 0px;
 
   // transition-speed
-  --transition-duration: 0.3s;
-  --transition-burger-nav: cubic-bezier(0.7, 0, 0.2, 1);
+  --timing: 0.3s;
+  --timing-burger-nav: 1s;
+
+  // transition-animation
+  --burger-nav-animation: cubic-bezier(0.7, 0, 0.2, 1);
 
   // outline
   --outline-offset: 2px;

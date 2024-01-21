@@ -55,7 +55,7 @@
       height: calc(100dvh - var(--header-height));
       background-color: var(--color-light-mint);
       translate: -120% 0;
-      transition: translate 1s var(--transition-burger-nav);
+      transition: translate var(--timing-burger-nav) var(--burger-nav-animation);
       overflow-y: auto;
       z-index: 10;
       display: flex;
@@ -112,11 +112,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      // flex-wrap: wrap;
       gap: 10px;
       background-color: var(--color-light);
       padding: 15px 25px;
       border-top: 1px solid var(--color-mint-green);
+    }
+
+    @include small-mobile {
+      padding: 12px 15px;
     }
   }
 
@@ -125,6 +128,10 @@
       @include fz18-dmsans;
 
       padding: 12px 15px;
+    }
+
+    @include small-mobile {
+      @include fz16-dmsans;
     }
   }
 
@@ -148,7 +155,7 @@
     @include fz22-dmsans;
 
     color: var(--color-dark-green);
-    transition: opacity var(--transition-duration) ease-out, visibility var(--transition-duration) ease-out;
+    transition: opacity var(--timing) ease-out, visibility var(--timing) ease-out;
 
     &.is-hidden {
       opacity: 0;
@@ -169,7 +176,7 @@
     border-radius: 50%;
     z-index: 10;
     cursor: pointer;
-    transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
+    transition: background-color var(--timing) ease, color var(--timing) ease;
 
     &::before,
     &::after {
@@ -181,7 +188,7 @@
       height: var(--burger-line-height);
       background-color: currentColor;
       border-radius: var(--border-radius-all-small);
-      transition: transform var(--transition-duration) ease-in-out, top var(--transition-duration) ease-in-out;
+      transition: transform var(--timing) ease-in-out, top var(--timing) ease-in-out;
     }
 
     &::before {
@@ -205,14 +212,14 @@
         width: 30px;
         top: 48%;
         transform: translateX(-50%) rotate(45deg);
-        transition: transform var(--transition-duration) ease-in-out, top var(--transition-duration) ease-in-out;
+        transition: transform var(--timing) ease-in-out, top var(--timing) ease-in-out;
       }
 
       &::after {
         width: 30px;
         top: 48%;
         transform: translateX(-50%) rotate(-45deg);
-        transition: transform var(--transition-duration) ease-in-out, top var(--transition-duration) ease-in-out;
+        transition: transform var(--timing) ease-in-out, top var(--timing) ease-in-out;
       }
     }
   }
