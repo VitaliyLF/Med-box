@@ -1,65 +1,50 @@
 .preloader {
-  --preloader-offset: 100px;
-  --preloader-border-width: 10px;
+  --preloder-item-width: 150px;
 
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-blue-green);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-medbox-green);
+  z-index: var(--preloader-z-index);
 
-  &--hide {
-    opacity: 0;
-    visibility: hidden;
-    z-index: -1;
-  }
+  &__row {
+    @include preloader-rotate;
 
-  &__loader,
-  &__percents {
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
-    translate: -50% -50%;
+    width: calc(var(--preloder-item-width) * 2);
+    height: calc(var(--preloder-item-width) * 2);
+    margin-top: calc(var(--preloder-item-width) * -1);
+    margin-left: calc(var(--preloder-item-width) * -1);
+    text-align: center;
+    animation: preloader-rotate var(--timing-preloader) infinite linear;
   }
 
-  &__main {
-    display: inline-block;
-    width: calc(var(--preloader-offset) * 2);
-    aspect-ratio: 1;
-    overflow: hidden;
-  }
-
-  &__wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform: translateZ(0) scale(1);
-    backface-visibility: hidden;
-  }
-
-  &__content {
-    @include preloader;
+  &__item {
+    @include preloader-bounce;
 
     position: absolute;
-    top: var(--preloader-offset);
-    left: var(--preloader-offset);
-    width: var(--preloader-offset);
-    aspect-ratio: 1;
-    border: var(--preloader-border-width) solid var(--color-deep-green);
-    border-top-color: transparent;
+    display: inline-block;
+    top: 0;
+    background-color: var(--color-puerto-rico);
     border-radius: 50%;
-    animation: preloader 1.2s linear infinite;
-  }
+    width: var(--preloder-item-width);
+    height: var(--preloder-item-width);
+    animation: preloader-bounce var(--timing-preloader) infinite ease-in-out;
 
-  &__percents {
-    @include fz22-dmsans;
-
-    color: var(--color-black-green);
+    &:last-child {
+      top: auto;
+      bottom: 0;
+      animation-delay: -1s;
+    }
   }
+}
+
+.preloader-hiding .preloader {
+  transition: var(--timing) opacity;
+  opacity: 0;
+}
+
+.loaded .preloader {
+  display: none;
 }

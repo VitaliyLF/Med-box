@@ -21,12 +21,17 @@
   // transition-speed
   --timing: 0.3s;
   --timing-burger-nav: 1s;
+  --timing-preloader: 2s;
 
   // transition-animation
   --burger-nav-animation: cubic-bezier(0.7, 0, 0.2, 1);
 
   // outline
   --outline-offset: 2px;
+
+  // z-index-
+  --preloader-z-index: 1001;
+  --header-nav-z-index: 10;
 
   // letter-spacing
   --letter-spacing1-9: 1.9px;
