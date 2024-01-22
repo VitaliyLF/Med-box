@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     column-gap: 55px;
-    padding-bottom: var(--offset-large);
+    padding-bottom: 75px;
 
     @include big-desktop {
       flex-direction: column;
@@ -34,25 +34,25 @@
   }
 
   &__title {
-    @include mb(var(--offset-medium-large));
+    @include marginBottom(var(--offset-medium-large));
 
     text-transform: uppercase;
 
     @include mobile {
-      @include mb(var(--offset-small));
+      @include marginBottom(var(--offset-small));
     }
   }
 
   &__subtitle {
-    @include mb(var(--offset-small));
+    @include marginBottom(var(--offset-small));
 
     @include mobile {
-      @include mb(var(--offset-small));
+      @include marginBottom(var(--offset-small));
     }
   }
 
   &__text {
-    @include mb(var(--offset-medium-large));
+    @include marginBottom(var(--offset-medium-large));
 
     max-width: 436px;
 
@@ -61,7 +61,7 @@
     }
 
     @include mobile {
-      @include mb(var(--offset-medium));
+      @include marginBottom(var(--offset-medium));
     }
   }
 

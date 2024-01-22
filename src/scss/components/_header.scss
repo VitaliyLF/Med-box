@@ -83,12 +83,12 @@
   }
 
   &__nav-item {
-    @include mr(var(--offset-medium-small));
+    @include marginRight(var(--offset-medium-small));
 
     @include big-desktop {
-      @include mr(0);
+      @include marginRight(0);
 
-      @include mb(var(--offset-medium));
+      @include marginBottom(var(--offset-medium));
 
       flex-grow: 1;
     }

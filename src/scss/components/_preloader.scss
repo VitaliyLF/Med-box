@@ -1,50 +1,62 @@
-.preloader {
-  --preloder-item-width: 150px;
+// .preloader {
+//   --preloder-item-width: 150px;
 
-  position: fixed;
-  inset: 0;
-  background-color: var(--color-medbox-green);
-  z-index: var(--preloader-z-index);
+//   position: fixed;
+//   inset: 0;
+//   background-color: var(--color-medbox-green);
+//   z-index: var(--preloader-z-index);
 
-  &__row {
-    @include preloader-rotate;
+//   &__row {
+//     @include preloader-rotate;
 
-    position: relative;
-    top: 50%;
-    left: 50%;
-    width: calc(var(--preloder-item-width) * 2);
-    height: calc(var(--preloder-item-width) * 2);
-    margin-top: calc(var(--preloder-item-width) * -1);
-    margin-left: calc(var(--preloder-item-width) * -1);
-    text-align: center;
-    animation: preloader-rotate var(--timing-preloader) infinite linear;
-  }
+//     position: relative;
+//     top: 50%;
+//     left: 50%;
+//     width: calc(var(--preloder-item-width) * 2);
+//     height: calc(var(--preloder-item-width) * 2);
+//     margin-top: calc(var(--preloder-item-width) * -1);
+//     margin-left: calc(var(--preloder-item-width) * -1);
+//     text-align: center;
+//     animation: preloader-rotate var(--timing-preloader) infinite linear;
 
-  &__item {
-    @include preloader-bounce;
+//     @include mobile {
+//       width: var(--preloder-item-width);
+//       height: var(--preloder-item-width);
+//       margin-top: calc((var(--preloder-item-width) * -1) / 2);
+//       margin-left: calc((var(--preloder-item-width) * -1) / 2);
+//     }
+//   }
 
-    position: absolute;
-    display: inline-block;
-    top: 0;
-    background-color: var(--color-puerto-rico);
-    border-radius: 50%;
-    width: var(--preloder-item-width);
-    height: var(--preloder-item-width);
-    animation: preloader-bounce var(--timing-preloader) infinite ease-in-out;
+//   &__item {
+//     @include preloader-bounce;
 
-    &:last-child {
-      top: auto;
-      bottom: 0;
-      animation-delay: -1s;
-    }
-  }
-}
+//     position: absolute;
+//     display: inline-block;
+//     top: 0;
+//     background-color: var(--color-puerto-rico);
+//     border-radius: 50%;
+//     width: var(--preloder-item-width);
+//     height: var(--preloder-item-width);
+//     animation: preloader-bounce var(--timing-preloader) infinite ease-in-out;
 
-.preloader-hiding .preloader {
-  transition: var(--timing) opacity;
-  opacity: 0;
-}
+//     &:last-child {
+//       top: auto;
+//       bottom: 0;
+//       animation-delay: -1s;
+//     }
 
-.loaded .preloader {
-  display: none;
-}
+//     @include mobile {
+//       width: calc(var(--preloder-item-width) / 2);
+//       height: calc(var(--preloder-item-width) / 2);
+//     }
+//   }
+// }
+
+// .preloader-hiding .preloader {
+//   transition: var(--timing) opacity;
+//   opacity: 0;
+// }
+
+// .loaded .preloader {
+//   display: none;
+// }
