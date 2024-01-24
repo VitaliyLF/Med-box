@@ -21,19 +21,24 @@ window.addEventListener('load', () => {
 
 const blockListItem = document.querySelectorAll('.block-list-line__item');
 
-const animateblockListItem = (item) => {
-  gsap.from(item, { opacity: 0, y: 100, duration: 0.6, delay: 0.3, start: 'top 400px' });
+const enterAnimateblockListItem = (item) => {
+  gsap.to(item, { opacity: 1, y: 0, duration: 0.6, delay: 0.3, ease: 'back.out(1.8)' });
+};
+
+const leaveAnimateblockListItem = (item) => {
+  gsap.to(item, { opacity: 0, y: 100, duration: 0.6, delay: 0.3, ease: 'back.out(1.8)' });
 };
 
 blockListItem.forEach((blockItem) => {
-  gsap.to(blockListItem, {
+  gsap.to(blockItem, {
+    opacity: 0,
     scrollTrigger: {
       trigger: blockItem,
       markers: true,
-      scrub: true,
-      toggleActions: 'restart pause resume none',
-      start: 'top center',
-      onEnter: () => animateblockListItem(blockItem),
+      start: 'top 65%',
+      end: 'bottom top',
+      onEnter: () => enterAnimateblockListItem(blockItem),
+      onLeaveBack: () => leaveAnimateblockListItem(blockItem),
     },
   });
 });

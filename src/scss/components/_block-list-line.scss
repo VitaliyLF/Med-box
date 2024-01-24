@@ -46,6 +46,8 @@
     @include marginBottom(50px);
 
     position: relative;
+    opacity: 0;
+    translate: 0 100px;
 
     &:before {
       content: "";
